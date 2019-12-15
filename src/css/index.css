@@ -13,11 +13,44 @@ html, body {
 }
 .momontom__popup {
   display:none;
+  position: absolute;
+  z-index: 1;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,.8);
+}
+
+.momontom__popup-form {
+  position:relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  background: snow;
+  width:400px;
+  padding:40px;
+  border-radius: 10px;
+}
+
+.momontom__popup-form input {
+  box-sizing: border-box;
+  width:100%;
+  padding:15px 20px;
+  font-size:1rem;
+  text-align: center;
+  border-radius: 5px;
+  border:1px solid rgba(0, 175, 214,.5);
+}
+
+.momontom__popup-form button {
+  position: absolute;
+  right:55px;
 }
 
 .momontom__container {
   width:500px;
-  background: rgba(255,255,255,.3);
+  background: rgba(255,255,255,.35);
   position: absolute;
   top:50%;
   left:50%;
@@ -41,11 +74,9 @@ html, body {
   padding:30px 0;
   font-size: 1.8rem;
 }
-  /* .header__greeting-text {} */
   .header__greeting-user {
     font-style: italic;
   }
-  /* .header__greeting-emoji {} */
 
 .header__clock {
   font-size: 5rem;
@@ -154,11 +185,18 @@ html, body {
   display: block;
   width:80%;
   text-align: left;
-  text-indent: 10px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .btn__done {
   width:10%;
+  margin-top:5px;
+}
+
+.btn__done:checked + span {
+  color: gray;
+  text-decoration: line-through;
 }
 
 .btn__delete {

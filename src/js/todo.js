@@ -7,7 +7,6 @@ function toggleCheck(e) {
   const currnetChecked = currentInput.checked;
   const index = todos.findIndex(todo=>todo.id === parseInt(id));
   todos[index]['checked'] = currnetChecked;
-  console.log(todos)
   saveToDos();
 }
 
@@ -37,10 +36,9 @@ function makeTodoObj(text, checked, id) {
 function paintTodoList(text, checked = false, id = Date.now()) {
   const li = document.createElement('li');
   const checkbox = document.createElement('input');
-  checkbox.setAttribute('type', 'checkbox')
+  checkbox.setAttribute('type', 'checkbox');
   const span = document.createElement('span');
   const deleteButton = document.createElement('button');
-  // const newId = Date.now();
   checkbox.classList.add('btn__done');
   checkbox.checked = checked;
   span.classList.add('body__list-todo-text');
