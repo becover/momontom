@@ -73,6 +73,11 @@ label {
 
 button {
   all: unset;
+  cursor: pointer;
+}
+
+input {
+  cursor: pointer;
 }
 
 html,

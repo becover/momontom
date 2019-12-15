@@ -1,5 +1,5 @@
 const buttons = todoList.querySelectorAll('li button');
-const inputCheckbox = todoList.querySelectorAll('li .btn__done');
+const inputCheckbox = document.getElementsByClassName('btn__done');
 
 function countTodoList() {
   const length = todos.length;
@@ -17,6 +17,6 @@ function init() {
   todoForm.addEventListener('submit', countTodoList);
   Array.from(buttons).forEach(button => button.addEventListener('click', countTodoList));
   Array.from(inputCheckbox).forEach(input => input.addEventListener('click', countTodoList));
-}
+};
 
 init();

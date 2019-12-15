@@ -53,9 +53,8 @@ function paintTodoList(text, checked = false, id = Date.now()) {
   li.appendChild(deleteButton);
 
   todoList.appendChild(li);
+  saveToDos();
   makeTodoObj(text, checked, id);
-
-
 }
 
 function handleSubmit(e) {
@@ -76,6 +75,7 @@ function loadStorage() {
   if(loaded !== null) {
     const parseTodos = JSON.parse(loaded);
     parseTodos.forEach(todo => paintTodoList(todo.text, todo.checked, todo.id))
+    return false;
   }
 }
 
