@@ -1,0 +1,52 @@
+#wrap {}
+
+.active {
+  display:block !important;
+}
+.momontom__popup {
+  display:none;
+}
+
+.momontom__container {}
+
+/*momontom header*/
+.momontom__header {}
+
+.header__weather {}
+
+.header__greeting {}
+  .header__greeting-text {}
+  .header__greeting-user {}
+  .header__greeting-emoji {}
+
+.header__clock {}
+  .header__clock-seconds {}
+
+.header__date {}
+  .header__date p {}
+
+.header__info {}
+  .header__info-ul {}
+    .header__info-num {}
+    .header__info-text {}
+
+/*momontom body*/
+.momontom__body {}
+
+.body__form {}
+
+.body__form-input {}
+
+.body__list {} 
+
+.body__list-ul {}
+
+.body__list-todo-text {}
+
+.btn__done {}
+
+.btn__delete {}
+
+
+
+
