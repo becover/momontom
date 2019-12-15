@@ -39,7 +39,7 @@ function handleSubmit(e) {
   e.preventDefault();
   popup.classList.remove(ACTIVE);
   const username = popupInput.value;
-  if (!currentValue) {
+  if (!username) {
     alert('Please write a text')
     todoInput.focus();
     return false;

@@ -19,7 +19,9 @@
     </div>
     <div class="momontom__container">
       <div class="momontom__header">
-        <div class="header__weather"></div>
+        <div class="header__weather">
+          <p></p>
+        </div>
         <div class="header__greeting">
           <p>
             <span class="header__greeting-text">Good Morning</span>
@@ -28,7 +30,7 @@
           </p>
         </div>
         <div class="header__clock">
-          <p><span class="header__clock-hourAndMinutes">00:00</span><span class="header__clock-seconds">00</span></p>
+          <p><span class="header__clock-hourAndMinutes">00:00</span></p>
         </div>
         <div class="header__date">
           <p>Monday, 14th, december</p>
@@ -48,7 +50,7 @@
               <div class="header__info-text">Done</div>
             </li>
             <li class="header__info-achievement">
-              <div class="header__info-num">0%</div>
+              <div class="header__info-num"><span class="num"></span><span class="unit">%</span></div>
               <div class="header__info-text">Achievement</div>
             </li>
           </ul>
@@ -56,9 +58,11 @@
       </div>
       <div class="momontom__body">
         <form class="body__form">
-          <label for="body__form-input"></label>
-          <input type="text" id="body__form-input" placeholder="Please a write to do" />
-          <button class="btn__submit">✔</button>
+          <div class="body__form-position">
+            <label for="body__form-input"></label>
+            <input type="text" id="body__form-input" placeholder="Please a write to do" />
+            <button class="btn__submit">✔</button>
+          </div>
         </form>
         <div class="body__list">
           <ul class="body__list-ul">
@@ -74,5 +78,6 @@
   <script src="src/js/date.js"></script>
   <script src="src/js/todo.js"></script>
   <script src="src/js/info.js"></script>
+  <script src="src/js/bg.js"></script>
 </body>
 </html>
