@@ -28,14 +28,5 @@ const info = header.querySelector('.header__info'),
 const todoForm = body.querySelector('.body__form'),
   todoInput = body.querySelector('#body__form-input'),
   todoList = body.querySelector('.body__list-ul');
-const todoList2 = wrap.getElementsByClassName('body__list-ul')[0],
-  buttons = todoList2.getElementsByTagName('button');
-
 
 let todos = [];
-console.log(todos)
-// let currentTimeObj = {
-//   hours:'',
-//   minutes:''
-// }
-// console.log(currentTimeObj)
