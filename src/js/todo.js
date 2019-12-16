@@ -67,6 +67,7 @@ function handleSubmit(e) {
   }
   paintTodoList(currentValue);
   todoInput.value = '';
+  infoController.init();
   return todos;
 }
 

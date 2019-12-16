@@ -22,7 +22,7 @@ const popup = wrap.querySelector('.momontom__popup'),
 const info = header.querySelector('.header__info'),
   infoUl = info.querySelector('.header__info-ul'),
   infoTotal = infoUl.querySelector('.header__info-total .header__info-num'),
-  infoPandding = infoUl.querySelector('.header__info-pandding .header__info-num'),
+  infoPanding = infoUl.querySelector('.header__info-panding .header__info-num'),
   infoDone = infoUl.querySelector('.header__info-done .header__info-num'),
   infoAchivement = infoUl.querySelector('.header__info-achievement .header__info-num span.num');
 
@@ -31,3 +31,14 @@ const todoForm = body.querySelector('.body__form'),
   todoList = body.querySelector('.body__list-ul');
 
 let todos = [];
+
+const infoController = {
+  init: function () {
+    const buttons = todoList.querySelectorAll('li button');
+    const inputCheckbox = document.getElementsByClassName('btn__done');
+    window.addEventListener('load', countTodoList);
+    todoForm.addEventListener('submit', countTodoList);
+    Array.from(buttons).forEach(button => button.addEventListener('click', countTodoList));
+    Array.from(inputCheckbox).forEach(input => input.addEventListener('click', countTodoList));
+  }
+}
