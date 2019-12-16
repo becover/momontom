@@ -139,9 +139,10 @@ html, body {
   border:1px solid rgba(0, 175, 214,.5);
   width:100%;
   font-size: 1rem;
-  padding:10px;
+  padding:10px 40px;
   border-radius: 20px;
   text-align: center;
+  box-sizing: border-box;
 }
 .btn__submit {
   position:absolute;
@@ -152,8 +153,6 @@ html, body {
   color:#00aed5;
 
 }
-
-.body__list {} 
 
 .body__list-ul {
   font-size: 1rem;
@@ -177,26 +176,38 @@ html, body {
   clear:both;
 }
 
-.body__list-todo-text,.btn__done, .btn__delete {
+.body__list-todo-text,.btn__done + label, .btn__delete {
+  display: block;;
   float:left;
 }
 
 .body__list-todo-text {
-  display: block;
-  width:80%;
+  padding-left:1%;
+  width:79%;
   text-align: left;
   word-wrap: break-word;
   white-space: pre-wrap;
 }
 
 .btn__done {
-  width:10%;
-  margin-top:5px;
+  position: absolute;
+  left:-101%;
 }
 
-.btn__done:checked + span {
-  color: gray;
+.btn__done + label{
+  position: static;
+  width:10%;
+  height:20px;
+  color:#00aed5;
+}
+
+.btn__done:checked ~ span {
+  color: #a0a0a0;
   text-decoration: line-through;
+}
+
+.btn__done:checked + label {
+  color:#bbbbbb;
 }
 
 .btn__delete {

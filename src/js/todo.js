@@ -37,8 +37,12 @@ function paintTodoList(text, checked = false, id = Date.now()) {
   const li = document.createElement('li');
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
+  const label = document.createElement('label');
+  label.setAttribute('for','done');
+  label.innerHTML=`<i class="fas fa-check-square"></i>`;
   const span = document.createElement('span');
   const deleteButton = document.createElement('button');
+  checkbox.id='done';
   checkbox.classList.add('btn__done');
   checkbox.checked = checked;
   span.classList.add('body__list-todo-text');
@@ -49,11 +53,12 @@ function paintTodoList(text, checked = false, id = Date.now()) {
   checkbox.addEventListener('click', toggleCheck)
   li.id = id;
   li.appendChild(checkbox);
+  li.appendChild(label);
   li.appendChild(span);
   li.appendChild(deleteButton);
 
   todoList.appendChild(li);
-  saveToDos();
+  // saveToDos();
   makeTodoObj(text, checked, id);
 }
 
