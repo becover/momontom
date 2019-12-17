@@ -177,7 +177,7 @@ html, body {
 }
 
 .body__list-todo-text,.btn__done + label, .btn__delete {
-  display: block;;
+  display: block;
   float:left;
 }
 
@@ -201,15 +201,6 @@ html, body {
   color:#00aed5;
   cursor: pointer;
 }
-
-/* .checked {
-  color:#bbbbbb;
-}
-
-.checkedText {
-  color:#bbbbbb;
-  text-decoration: line-through;
-} */
 
 .btn__done:checked ~ span {
   color: #bbbbbb;

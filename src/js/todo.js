@@ -1,29 +1,13 @@
 const TODOS = "todos";
 
 function toggleCheck(e) {
-  const currentLabel = e.target;
-  currentLabel.classList.toggle('checked')
-  console.log('★currentLabel, ',currentLabel)
-  const li = currentLabel.parentNode.parentNode;
-  li.children[2].classList.toggle('checkedText')
-  console.log('li, ',li)
+  const currentItag = e.target;
+  const li = currentItag.parentNode.parentNode;
   const currentInput = li.children[0];
-  console.log('currentInput, ',currentInput)
   const id = li.id;
-  console.log('id, ',id)
   const currnetChecked = !currentInput.checked;
-  console.log('currnetChecked, ',currnetChecked)
   const index = todos.findIndex(todo => todo.id === parseInt(id));
-  console.log('index, ' , index)
-  console.log('변경 전todos, ', todos)
-  console.log('todos[index], ', todos[index])
-  console.log('todos[index]["checked"], ', todos[index]["checked"])
-
   todos[index]["checked"] = currnetChecked;
-  console.log('todos[index]["checked"], ', todos[index]["checked"])
-  console.log('변경 후todos, ', todos)
-
-
   saveToDos();
 }
 
@@ -50,18 +34,16 @@ function makeTodoObj(text, checked, id) {
   saveToDos();
 }
 
-function paintTodoList(text, checked = false, id = Date.now()) {
+function paintTodoList(text, checked = false, id = UUIDv4()) {
   const li = document.createElement("li");
   const checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
   const label = document.createElement("label");
-  const date = new Date();
-  const timestamp = date.getTime();
-  label.setAttribute("for", timestamp);
+  label.setAttribute("for", `${id}-checkbox`);
   label.innerHTML = `<i class="fas fa-check-square"></i>`;
   const span = document.createElement("span");
   const deleteButton = document.createElement("button");
-  checkbox.id = timestamp;
+  checkbox.id = `${id}-checkbox`;
   checkbox.classList.add("btn__done");
   checkbox.checked = checked;
   span.classList.add("body__list-todo-text");
@@ -70,7 +52,6 @@ function paintTodoList(text, checked = false, id = Date.now()) {
   deleteButton.innerText = "❌";
   deleteButton.addEventListener("click", deleteTodo);
   label.addEventListener('click', toggleCheck);
-  // checkbox.addEventListener("click", toggleCheck);
   li.id = id;
   li.appendChild(checkbox);
   li.appendChild(label);
