@@ -1,12 +1,12 @@
 const TODOS = "todos";
 
 function toggleCheck(e) {
-  const currentItag = e.target;
-  const li = currentItag.parentNode.parentNode;
+  const currentLabel = e.target;
+  const li = currentLabel.parentNode.parentNode;
   const currentInput = li.children[0];
   const id = li.id;
   const currnetChecked = !currentInput.checked;
-  const index = todos.findIndex(todo => todo.id === parseInt(id));
+  const index = todos.findIndex(todo => todo.id === id);
   todos[index]["checked"] = currnetChecked;
   saveToDos();
 }
