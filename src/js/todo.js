@@ -15,7 +15,7 @@ function deleteTodo(e) {
   const currentBtn = e.target;
   const li = currentBtn.parentNode;
   todoList.removeChild(li);
-  const deleteTodos = todos.filter(todo => todo.id !== parseInt(li.id));
+  const deleteTodos = todos.filter(todo => todo.id !== li.id);
   todos = deleteTodos;
   saveToDos();
 }
